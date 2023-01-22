@@ -1,6 +1,3 @@
-import bot from './assets/bot.svg'
-import user from './assets/user.svg'
-
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 
@@ -49,13 +46,7 @@ function chatStripe(isAi, value, uniqueId) {
         `
         <div class="wrapper ${isAi && 'ai'}">
             <div class="chat">
-                <div class="profile">
-                    <img 
-                      src=${isAi ? bot : user} 
-                      alt="${isAi ? 'bot' : 'user'}" 
-                    />
-                </div>
-                <div class="message" id=${uniqueId}>${value}</div>
+                <div class="message${isAi && 'ai'}" id=${uniqueId}>${value}</div>
             </div>
         </div>
     `
@@ -85,8 +76,9 @@ const handleSubmit = async (e) => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
+    form.classList.add("hidden");
 
-    const response = await fetch('http://localhost:5000', {
+    const response = await fetch('https://khalocode.onrender.com', {        // das natürlich später ändern
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -107,7 +99,7 @@ const handleSubmit = async (e) => {
     } else {
         const err = await response.text()
 
-        messageDiv.innerHTML = "Something went wrong"
+        messageDiv.innerHTML = "Something went wrong"                               //vielleicht was anderes
         alert(err)
     }
 }
