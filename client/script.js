@@ -78,11 +78,7 @@ const handleSubmit = async (e) => {
     loader(messageDiv)
     form.classList.add("hidden");
 
-<<<<<<< HEAD
     const response = await fetch('https://khalocode.onrender.com', {        // das natürlich später ändern
-=======
-    const response = await fetch('https://khalocode.onrender.com', {
->>>>>>> 20da1a11b5993af44b040f6f50f562b233cfc760
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
