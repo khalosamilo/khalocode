@@ -48,19 +48,11 @@ function chatStripe(isAi, value, uniqueId) {
             <div class="chat">
                 <div class="message${isAi && 'ai'}" id=${uniqueId}>${value}</div>
             </div>
-            <button onclick="showForm()">Show Form</button>
         </div>
     `
     )
 }
 
-function showForm() {
-    // Show the form by removing the "hidden" class
-    form.classList.remove("hidden");
-  
-    // Clear the chat container
-    chat_container.innerHTML = "";
-  }
 const handleSubmit = async (e) => {
     e.preventDefault()
 
