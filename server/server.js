@@ -25,7 +25,7 @@ app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
     
-    const finalPrompt = "Be a highly intelligent homework solving bot, who is specified to write texts. Write an introduction and conclsion if it fits to the text and do not forget linking words. Human:\n" + prompt; 
+    const finalPrompt = "you are a highly intellegent coding bot, who helps others to write good code for their purposes. Human:\n" + prompt; 
     let max_tokens = 1000;
     
     const response = await openai.createCompletion({
